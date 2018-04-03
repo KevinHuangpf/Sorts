@@ -38,13 +38,7 @@ public class Sort
                     arr[j]=temp;
                 }
             }
-            //打印第i次的结果
-    		System.out.print("第"+(i+1)+"次排序：");
-    		for(int num : arr)
-    		{
-    			System.out.print(num+" ");
-    		}
-    		System.out.println();
+
         }
 		
 	}
@@ -65,13 +59,7 @@ public class Sort
 				}
 					
 			}
-			//打印第i次的结果
-    		System.out.print("第"+(i+1)+"次排序：");
-    		for(int num : arr)
-    		{
-    			System.out.print(num+" ");
-    		}
-    		System.out.println();
+
 		}
 	}
 	
@@ -112,15 +100,8 @@ public class Sort
                     arr[j+1] = temp;
                 }
             }
-        	
-		//打印第i次的结果
-		System.out.print("第"+(i)+"次排序：");
-		for(int num : arr)
-		{
-			System.out.print(num+" ");
+
 		}
-		System.out.println();
-		} 
 	}
 	
 	
