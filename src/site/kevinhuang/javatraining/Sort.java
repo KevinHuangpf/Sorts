@@ -5,19 +5,19 @@ public class Sort
 	public static void main(String[] args)
 	{
 		int[] numSerl = new int[]{28,16,32,12,60,2,5,72};
-		//ÅÅĞòÖ®Ç°
-		System.out.print("Ô­Ê¼Êı¾İ£º");
+		//æ’åºä¹‹å‰
+		System.out.print("åŸå§‹æ•°æ®ï¼š");
 		for(int num : numSerl)
 		{
 			System.out.print(num+" ");
 		}
 		System.out.println();		
 		
-		//´Ë´¦¸ü»»ÅÅĞòËã·¨
+		//æ­¤å¤„æ›´æ¢æ’åºç®—æ³•
 		quickSort(numSerl);
 		
-		//ÅÅĞòÖ®ºó
-		System.out.print("ÅÅĞòÖ®ºó£º");
+		//æ’åºä¹‹å
+		System.out.print("æ’åºä¹‹åï¼š");
 		for(int num : numSerl)
 		{
 			System.out.print(num+" ");
@@ -29,17 +29,17 @@ public class Sort
 	{
 		for (int i = 0; i < arr.length-1; i++) 
 		{
-            for (int j = i+1; j < arr.length; j++) 
-            {
-                if(arr[j]<arr[i])
-                {
-                    int temp=arr[i];
-                    arr[i]=arr[j];
-                    arr[j]=temp;
-                }
-            }
+		    for (int j = i+1; j < arr.length; j++) 
+		    {
+			if(arr[j]<arr[i])
+			{
+			    int temp=arr[i];
+			    arr[i]=arr[j];
+			    arr[j]=temp;
+			}
+		    }
 
-        }
+		}
 		
 	}
 	
@@ -79,8 +79,8 @@ public class Sort
 					source[j] = temp; 
 			} 
 	
-		//´òÓ¡µÚi´ÎµÄ½á¹û
-		System.out.print("ÔöÁ¿"+(gap)+"´ÎÅÅĞò£º");
+		//æ‰“å°ç¬¬iæ¬¡çš„ç»“æœ
+		System.out.print("å¢é‡"+(gap)+"æ¬¡æ’åºï¼š");
 		for(int num : source)
 		{
 			System.out.print(num+" ");
@@ -92,14 +92,14 @@ public class Sort
 	/* 4: sortBubble*/
 	public static void sortBubble(int[] arr) 
 	{   
-		for(int i=0;i<arr.length-1;i++){//Ã°ÅİÌËÊı
-            for(int j=0;j<arr.length-i-1;j++){
-                if(arr[j+1]<arr[j]){
-                    int temp = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = temp;
-                }
-            }
+		for(int i=0;i<arr.length-1;i++){//å†’æ³¡è¶Ÿæ•°
+		    for(int j=0;j<arr.length-i-1;j++){
+			if(arr[j+1]<arr[j]){
+			    int temp = arr[j];
+			    arr[j] = arr[j+1];
+			    arr[j+1] = temp;
+			}
+		    }
 
 		}
 	}
@@ -109,12 +109,12 @@ public class Sort
 	/* 5: sortMerge*/
 	public static void sortMerge(int []arr)
 	{
-		int[] aux = new int[arr.length];    //¸¨ÖúÊı×é
+		int[] aux = new int[arr.length];    //è¾…åŠ©æ•°ç»„
 		sortMerge(arr, 0, arr.length - 1, aux);
     }
 	
 	
-	//ÖØÔØµÄ·½·¨,¶àÌ¬µÄ±íÏÖ
+	//é‡è½½çš„æ–¹æ³•,å¤šæ€çš„è¡¨ç°
 	public static void sortMerge(int[] a, int lo, int hi, int[] aux) 
 	{
 		    if (hi <= lo)
@@ -147,7 +147,7 @@ public class Sort
 
 	    }
 	    
-	    System.out.print("¹é²¢"+i+"´Î: ");
+	    System.out.print("å½’å¹¶"+i+"æ¬¡: ");
 		for(int num : a)
 		{
 			System.out.print(num+" ");
@@ -155,7 +155,9 @@ public class Sort
 		System.out.println();
 	}
 	
-	//quicksort	
+	
+	
+	/* 6: quickSort*/
 	
 	//quickSort
 	public static void quickSort(int[] array){
@@ -209,70 +211,6 @@ public class Sort
 	
 	
 	
-	
-	/*
-	
-	public static int[] quickSort(int[] array) {
-		return quickSortTmp(array, 0, array.length - 1);
-	}
-	
-	public static int[] quickSortTmp(int[] array, int low, int high) {
-		  if (low < high) {
-		   int division = partition(array, low, high);
-		   quickSortTmp(array, low, division - 1);
-		   quickSortTmp(array, division + 1, high);
-		  }
-		  return array;
-		 }
-	 public static void swap(int[] array, int a, int b) {
-		  if (a != b) {
-		   int temp = array[a];
-		   array[a] = array[b];
-		   array[b] = temp;
-		  }
-		 }
-		 
-	
-	private static int mark = 0;
-	 
-	public static int partition(int array[], int low, int high) {
-		
-		int i=low,j=high+1;
-		int base = array[low];
-		  mark++;		  
-		  while (true) {
-
-		   while (array[++i] <= base) {
-			   if(i==high) break;
-			   System.out.println("´Ó×óÍùÓÒÕÒ±È" + base + "Ğ¡µÄ£¬Ö¸Õë±ä¶¯£º" + low + "-" + high);
-		   }
-		   while (array[--j] >= base) {
-			   if(j==low) break;
-			   System.out.println("´ÓÓÒÍù×óÕÒ±È" + base + "´óµÄ£¬Ö¸Õë±ä¶¯£º" + low + "-" + high);
-		   }
-		   if(i>=j) break;
-		   
-		   swap(array, i, j);
-		   
-		  }
-		  swap(array, low, j);
-		  
-		  System.out.println("ÕıÔÚ½øĞĞµÚ" + mark + "ÂÖ·Ö¸ô£º");
-		   for (int n : array) {
-			    System.out.print(n + " ");
-			   }
-		   System.out.println();
-		 
-		   return j;
-		  
-
-		 }*/
-	
-	
-	
-	
-	
-	
-//ÕâÊÇÎ²Ïß	
+//è¿™æ˜¯å°¾çº¿	
 }
 
